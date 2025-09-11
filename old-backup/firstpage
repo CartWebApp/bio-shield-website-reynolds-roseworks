@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html>
+        <head>
+<meta charset = "UTF-8">
+<title>Main Page</title>
+        </head>
+        <body>
+<p>This will the the <strong>main</strong> page. This will be the <a href = 'second-page/second-page.html'>second page.</a></p>
+<h2>This is what our products will look like</h2>
+<img src = 'product-1-project-1.jpg' alt = 'Bio Shield Products'>
+<p>and</p>
+<img src = 'product-2-project-1.jpg' alt = 'Bio Shield Products'>
+<p>this will be our main logo as well</p>
+<img src = 'rey-roseworks.png' alt = 'Bio Shield Logo'>
+        </body>
+    </html>

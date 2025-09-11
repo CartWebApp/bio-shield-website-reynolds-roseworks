@@ -1,15 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <html>
-        <head>
-<meta charset = "UTF-8">
-<title>Main Page</title>
-        </head>
-        <body>
-<p>This will the the <strong>main</strong> page. This will be the <a href = 'second-page/second-page.html'>second page.</a></p>
-<h2>This is what our products will look like</h2>
-<img src = 'product-1-project-1.jpg' alt = 'Bio Shield Products'width = '150' height = '150'>
-<p>and</p>
-<img src = 'product-2-project-1.jpg' alt = 'Bio Shield Products'width = '150' height = '150'>
-        </body>
-    </html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container for the content */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph and link styles */
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Images */
+        .product-images {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .product-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Logo */
+        .logo img {
+            max-width: 200px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* Styling for mobile devices */
+        @media (max-width: 768px) {
+            .product-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-images img {
+                width: 80%;
+            }
+
+            .logo img {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>This will be the <strong>main</strong> page. This will be the <a href="second-page/second-page.html">second page</a>.</p>
+
+        <h2>This is what our products will look like</h2>
+
+        <div class="product-images">
+            <!-- First Product Image -->
+            <img src="product-1-project-1.jpg" alt="Bio Shield Products">
+            <!-- Second Product Image -->
+            <img src="product-2-project-1.jpg" alt="Bio Shield Products">
+        </div>
+
+        <p>And this will be our main logo as well:</p>
+
+        <div class="logo">
+            <!-- Logo Image -->
+            <img src="rey-roseworks.png" alt="Bio Shield Logo">
+        </div>
+    </div>
+</body>
+</html>
