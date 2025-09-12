@@ -119,12 +119,23 @@
 
         <div class="product-images">
             <!-- First Product Image -->
-            <img src="product-1-project-1.jpg" alt="Bio Shield Products">
+            <a href="/products-page/original-spray-16.html">
+
+                <img src="images/product-1-project-1.jpg" alt="Bio Shield Products">
+            </a>
             <!-- Second Product Image -->
-            <img src="product-2-project-1.jpg" alt="Bio Shield Products">
+             <a href="/products-page/lavender-essential-oil-15.html">
+
+                 <img src="images/product-2-project-1.jpg" alt="Bio Shield Products">
+             </a>
+            <!-- Third Product Image -->
+            <img src="images/product-3-project-1.jpg" alt="Bio Shield Products
+">            <!-- Fourth Product Image -->
+            <img src="images/product-4-project-1.jpg" alt="Bio Shield Products">
         </div>
     <footer>
         <p>&copy; 2025 Rey Roseworks. All rights reserved.</p>
     </footer>
 </body>
 </html>
+    
