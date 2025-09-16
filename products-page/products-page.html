@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rey Roseworks Bio Shield natural sprays and essential oils. Explore all our products here.">
+  <title>Rey Roseworks - Products</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header, footer {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      color: #0056b3;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 3px;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1200px;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2em;
+      color: #222;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      font-size: 0.9em;
+      color: #333;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-top: 40px;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rey Roseworks</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../second-page/second-page.html">About</a>
+      <a href="products-page.html" class="active">Products</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <a href="original-spray-16.html">
+          <img src="../images/product-1-project-1.jpg" alt="Original Bio Shield Spray 16oz">
+        </a>
+        <h3>Original Spray (16oz)</h3>
+        <a href="original-spray-16.html" class="btn">View Product</a>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <a href="lavender-essential-oil-15.html">
+          <img src="../images/product-2-project-1.jpg" alt="Lavender Essential Oil 15ml">
+        </a>
+        <h3>Lavender Essential Oil (15ml)</h3>
+        <a href="lavender-essential-oil-15.html" class="btn">View Product</a>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <a href="bio-shield-lotion-12.html">
+          <img src="../images/product-3-project-1.jpg" alt="Bio Shield Moisturizing Lotion 12oz">
+        </a>
+        <h3>Bio Shield Moisturizing Lotion (12oz)</h3>
+        <a href="bio-shield-lotion-12.html" class="btn">View Product</a>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <a href="citrus-blend-spray-8.html">
+          <img src="../images/product-4-project-1.jpg" alt="Citrus Blend Spray 8oz">
+        </a>
+        <h3>Citrus Blend Spray (8oz)</h3>
+        <a href="citrus-blend-spray-8.html" class="btn">View Product</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rey Roseworks. All rights reserved.</p>
+  </footer>
+</body>
+</html>
