@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Rey Roseworks for questions about our eco-friendly sprays and essential oils.">
+  <title>Contact Us | Rey Roseworks</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #448927;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      padding: 15px 0;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      color: #0056b3;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 3px;
+    }
+
+    .logo img {
+      max-width: 220px;
+      margin: 20px 0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    main {
+      width: 90%;
+      max-width: 800px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    p.lead {
+      margin-bottom: 25px;
+      font-size: 1.1em;
+      color: #f0f0f0;
+    }
+
+    form {
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1em;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .info {
+      margin-top: 30px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+
+    .info h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    footer {
+      background: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #333;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/rey-roseworks.png" alt="Rey Roseworks Bio Shield Logo">
+    </div>
+    <nav aria-label="Main Navigation">
+      <a href="../index.html">Home</a>
+      <a href="../second-page/second-page.html">About</a>
+      <a href="../products-page/products-page.html">Products</a>
+      <a href="#" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us</h1>
+    <p class="lead">We’d love to hear from you! Fill out the form below or reach out using our details.</p>
+
+    <form id="contact-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+      <label for="subject">Subject</label>
+      <select id="subject" name="subject">
+        <option>General Inquiry</option>
+        <option>Partnerships</option>
+        <option>Support</option>
+        <option>Other</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <div class="info">
+      <h2>Our Office</h2>
+      <p><strong>Address:</strong> 123 Paper St, Imaginetown, CA 90210</p>
+      <p><strong>Phone:</strong> (555) 666-1212</p>
+      <p><strong>Email:</strong> hello@reyroseworks.com</p>
+      <p><strong>Hours:</strong> Mon–Fri, 9:00 AM – 5:00 PM (PST)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rey Roseworks. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for contacting us! (This is a demo form).');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
