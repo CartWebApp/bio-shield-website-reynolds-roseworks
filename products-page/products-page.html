@@ -18,8 +18,8 @@
     .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; margin-top:30px;}
     .product-card { background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.08); padding:15px; transition:transform 0.3s;}
     .product-card:hover { transform:translateY(-5px);}
-    .product-card img { max-width:100%; border-radius:8px;}
-    .product-card h3 { margin:15px 0 10px; font-size:1.2em; color:#222;}
+    .product-card img { max-width:100%; border-radius:8px; cursor:pointer;}
+    .product-card h3 { margin:15px 0 10px; font-size:1.2em; color:#222; cursor:pointer;}
     .btn, .addToCart { display:inline-block; margin-top:10px; padding:10px 18px; background:#007BFF; color:#fff; border-radius:5px; text-decoration:none; cursor:pointer; transition:background 0.3s;}
     .btn:hover, .addToCart:hover { background:#0056b3; }
   </style>
@@ -47,35 +47,46 @@
     <div class="product-grid">
       <!-- Product 1 -->
       <div class="product-card product">
-        <img src="../images/product-1-project-1.jpg" alt="Original Bio Shield Spray 16oz" class="prodImage">
-        <h3 class="prodName">Original Spray (16oz)</h3>
+        <a href="original-spray-16.html">
+          <img src="../images/product-1-project-1.jpg" alt="Original Bio Shield Spray 16oz" class="prodImage">
+          <h3 class="prodName">Original Spray (16oz)</h3>
+        </a>
         <p class="prodDesc">Powerful natural spray to protect and refresh your space.</p>
         <p class="prodPrice">29.99</p>
         <button class="addToCart">Add to Cart</button>
       </div>
+
       <!-- Product 2 -->
       <div class="product-card product">
-        <img src="../images/product-2-project-1.jpg" alt="Lavender Essential Oil 15ml" class="prodImage">
-        <h3 class="prodName">Lavender Essential Oil (15ml)</h3>
+        <a href="lavender-essential-oil-15.html">
+          <img src="../images/product-2-project-1.jpg" alt="Lavender Essential Oil 15ml" class="prodImage">
+          <h3 class="prodName">Lavender Essential Oil (15ml)</h3>
+        </a>
         <p class="prodDesc">Calming lavender oil for aromatherapy and relaxation.</p>
         <p class="prodPrice">15.50</p>
         <button class="addToCart">Add to Cart</button>
       </div>
+
       <!-- Product 3 -->
-      <div class="product-card">
-        <a href="bio-shield-lotion-12.html">
-          <img src="../images/product-3-project-1.jpg" alt="Bio Shield Moisturizing Lotion 12oz">
+      <div class="product-card product">
+        <a href="moisturizing-lotion-12.html">
+          <img src="../images/product-3-project-1.jpg" alt="Bio Shield Moisturizing Lotion 12oz" class="prodImage">
+          <h3 class="prodName">Bio Shield Moisturizing Lotion (12oz)</h3>
         </a>
-        <h3>Bio Shield Moisturizing Lotion (12oz)</h3>
-        <a href="moisturizing-lotion-12.html" class="btn">View Product</a>
+        <p class="prodDesc">Moisturizing lotion infused with protective botanicals.</p>
+        <p class="prodPrice">24.75</p>
+        <button class="addToCart">Add to Cart</button>
       </div>
+
       <!-- Product 4 -->
-      <div class="product-card">
-        <a href="citrus-blend-spray-8.html">
-          <img src="../images/product-4-project-1.jpg" alt="Citrus Blend Spray 8oz">
+      <div class="product-card product">
+        <a href="plus+-spray-16.html">
+          <img src="../images/product-4-project-1.jpg" alt="Citrus Blend Spray 8oz" class="prodImage">
+          <h3 class="prodName">Citrus Blend Spray (8oz)</h3>
         </a>
-        <h3>Citrus Blend Spray (8oz)</h3>
-        <a href="plus+-spray-16.html" class="btn">View Product</a>
+        <p class="prodDesc">Refreshing citrus blend for an energizing aroma.</p>
+        <p class="prodPrice">19.99</p>
+        <button class="addToCart">Add to Cart</button>
       </div>
     </div>
   </main>
@@ -94,7 +105,7 @@
           cartTotalID = 'cartTotal',
           cartItemCountID = 'cartItemCount';
 
-    if(!localStorage.getItem(shopID)) localStorage.setItem(shopID, JSON.stringify({cart:[]}));
+    if(!localStorage.getItem(shopID)) localStorage.setItem(shopID, JSON.stringify({cart:[]})); 
     let shop = JSON.parse(localStorage.getItem(shopID));
 
     class Product {
