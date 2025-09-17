@@ -6,9 +6,10 @@
   <meta name="description" content="Rey Roseworks Bio Shield natural sprays and essential oils. Explore all our products here.">
   <title>Rey Roseworks - Products</title>
   <style>
+    /* Global Styles */
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f8f9fa;
+      background-color: #448927;
       margin: 0;
       padding: 0;
       color: #333;
@@ -17,12 +18,19 @@
       align-items: center;
     }
 
-    header, footer {
+    header {
       width: 100%;
-      padding: 20px;
+      padding: 15px 0;
       background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      margin-top: 10px;
     }
 
     nav a {
@@ -42,22 +50,34 @@
       padding-bottom: 3px;
     }
 
+    .logo img {
+      max-width: 220px;
+      margin: 20px 0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
     main {
       width: 90%;
       max-width: 1200px;
-      padding: 40px 0;
+      padding: 20px;
       text-align: center;
     }
 
     h2 {
       font-size: 2.2em;
       margin-bottom: 20px;
+      color: #fff;
     }
 
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
+      margin-top: 30px;
     }
 
     .product-card {
@@ -99,20 +119,23 @@
     }
 
     footer {
+      background: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
       font-size: 0.9em;
       color: #333;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-      padding: 20px;
       margin-top: 40px;
-      width: 100%;
-      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Rey Roseworks</h1>
-    <nav>
+    <div class="logo">
+      <img src="../images/rey-roseworks.png" alt="Rey Roseworks Bio Shield Logo">
+    </div>
+    <nav aria-label="Main Navigation">
       <a href="../index.html">Home</a>
       <a href="../second-page/second-page.html">About</a>
       <a href="products-page.html" class="active">Products</a>
