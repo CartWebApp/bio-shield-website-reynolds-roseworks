@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rey Roseworks Checkout - Review your order total.">
+  <title>Rey Roseworks - Checkout</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #448927; margin:0; padding:0; color:#333; display:flex; flex-direction:column; align-items:center; }
+    header, footer { width:100%; background:#fff; text-align:center; padding:15px; box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+    main { width:90%; max-width:800px; padding:20px; text-align:center; background:#fff; border-radius:10px; margin-top:30px; }
+    h2 { font-size:2.2em; color:#333; margin-bottom:20px; }
+    p { font-size:1.2em; margin:10px 0; }
+    .btn { padding:10px 18px; background:#007BFF; color:#fff; border-radius:5px; text-decoration:none; cursor:pointer; transition:0.3s; border:none; }
+    .btn:hover { background:#0056b3; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="../images/rey-roseworks.png" alt="Logo" style="max-width:220px;"></div>
+    <a href="cart.html" class="btn">Back to Cart</a>
+  </header>
+
+  <main>
+    <h2>Thank you for shopping with us</h2>
+    <p>This was your total but it cannot be processed.</p>
+    <p id="checkoutTotal"></p>
+    <p id="checkoutItems"></p>
+  </main>
+
+  <footer>&copy; 2025 Rey Roseworks. All rights reserved.</footer>
+
+  <script>
+    const shopID = 'testShop';
+    let shop = JSON.parse(localStorage.getItem(shopID)) || { cart: [] };
+
+    function cartSummary() {
+      let total = 0;
+      let itemCount = 0;
+      shop.cart.forEach(item=>{
+        total += item.price * item.qty;
+        itemCount += item.qty;
+      });
+      return { total, itemCount };
+    }
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const { total, itemCount } = cartSummary();
+      document.getElementById('checkoutTotal').innerText = `Total: $${total.toFixed(2)}`;
+      document.getElementById('checkoutItems').innerText = `Total Items: ${itemCount}`;
+    });
+  </script>
+</body>
+</html>

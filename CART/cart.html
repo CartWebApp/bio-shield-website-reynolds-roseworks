@@ -76,7 +76,12 @@
             </div>
           </div>`;
       });
-      cartElem.innerHTML += `<div class="cartTotal"><h3>Total: $${total.toFixed(2)}</h3><button id="emptyCart" class="btn">Empty Cart</button></div>`;
+      cartElem.innerHTML += `
+        <div class="cartTotal">
+          <h3>Total: $${total.toFixed(2)}</h3>
+          <button id="emptyCart" class="btn">Empty Cart</button>
+          <a href="checkout.html" class="btn">Continue to Checkout</a>
+        </div>`;
 
       // Event listeners
       cartElem.querySelectorAll('.removeBtn').forEach(btn => btn.addEventListener('click', removeItem));
