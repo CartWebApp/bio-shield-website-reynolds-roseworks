@@ -33,23 +33,40 @@
 
     nav {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 10px;
       font-weight: bold;
       color: #007BFF;
       text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
     }
 
     nav a.active {
       color: #0056b3;
       border-bottom: 2px solid #007BFF;
       padding-bottom: 3px;
+    }
+
+    /* Go to Cart Button in Nav */
+    nav .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    nav .btn:hover {
+      background: #0056b3;
     }
 
     .logo img {
@@ -139,7 +156,6 @@
       margin-bottom: 8px;
     }
 
-    /* Footer */
     footer {
       background: #fff;
       width: 100%;
@@ -151,33 +167,9 @@
       margin-top: 40px;
     }
 
-    /* Back to Top Button */
-    #backToTop {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #007BFF;
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s ease;
-      z-index: 1001;
-    }
-
-    #backToTop:hover {
-      background: #0056b3;
-    }
-
     @media (max-width: 600px) {
       nav {
-        display: flex;
         flex-direction: column;
-        gap: 10px;
       }
     }
   </style>
@@ -258,27 +250,6 @@
     <p>&copy; 2025 Rey Roseworks. All rights reserved.</p>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop">↑ Top</button>
-
-  <script>
-    const backToTopBtn = document.getElementById("backToTop");
-
-    window.onscroll = function () {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
-    };
-
-    backToTopBtn.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-  </script>
   <script>
     const shopID = 'testShop',
       cartTotalID = 'cartTotal',
@@ -288,8 +259,12 @@
     let shop = JSON.parse(localStorage.getItem(shopID));
 
     function cartTotal() {
-      let total = 0, count = 0;
-      shop.cart.forEach(item => { total += item.price * item.qty; count += item.qty; });
+      let total = 0,
+        count = 0;
+      shop.cart.forEach(item => {
+        total += item.price * item.qty;
+        count += item.qty;
+      });
       return [total, count];
     }
 
@@ -299,7 +274,9 @@
       document.getElementById(cartItemCountID).innerText = count;
     }
 
-    document.addEventListener("DOMContentLoaded", () => { updateCartTotals(); });
+    document.addEventListener("DOMContentLoaded", () => {
+      updateCartTotals();
+    });
   </script>
 </body>
 
