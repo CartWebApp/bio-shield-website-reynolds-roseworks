@@ -189,5 +189,38 @@
       </div>
     </div>
   </main>
+
+  <!-- Cart Integration Script -->
+  <script>
+    const shopID = 'testShop'; 
+    if (!localStorage.getItem(shopID)) {
+      localStorage.setItem(shopID, JSON.stringify({ cart: [] }));
+    }
+
+    let shop = JSON.parse(localStorage.getItem(shopID));
+
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+      const qty = parseInt(document.getElementById('quantity').value);
+      const product = {
+        name: "Lavender Essential Oil – 15ml",
+        desc: "Pure lavender essential oil, calming and natural.",
+        price: 12.50,
+        imgSrc: "/images/product-2-project-1.jpg",
+        qty: qty
+      };
+
+      const existingIndex = shop.cart.findIndex(item => item.name === product.name);
+      if (existingIndex > -1) {
+        shop.cart[existingIndex].qty += qty;
+      } else {
+        shop.cart.push(product);
+      }
+
+      localStorage.setItem(shopID, JSON.stringify(shop));
+      alert("Added to cart!");
+      // Optional: redirect straight to cart
+      // window.location.href = "cart.html";
+    });
+  </script>
 </body>
 </html>
