@@ -186,5 +186,37 @@
     <p>&copy; 2025 Rey Roseworks. All rights reserved.</p>
   </footer>
 
+  <!-- Cart Integration Script -->
+  <script>
+    const shopID = 'testShop'; 
+    if (!localStorage.getItem(shopID)) {
+      localStorage.setItem(shopID, JSON.stringify({ cart: [] }));
+    }
+
+    let shop = JSON.parse(localStorage.getItem(shopID));
+
+    document.querySelector('.add-to-cart').addEventListener('click', () => {
+      const qty = parseInt(document.getElementById('quantity').value);
+      const product = {
+        name: "Bio Shield Original Spray – 16oz",
+        desc: "Non-toxic surface protection, long-lasting up to 30 days.",
+        price: 12.99,
+        imgSrc: "../images/product-1-project-1.jpg",
+        qty: qty
+      };
+
+      const existingIndex = shop.cart.findIndex(item => item.name === product.name);
+      if (existingIndex > -1) {
+        shop.cart[existingIndex].qty += qty;
+      } else {
+        shop.cart.push(product);
+      }
+
+      localStorage.setItem(shopID, JSON.stringify(shop));
+      alert("Added to cart!");
+      // Or auto-redirect:
+      // window.location.href = "cart.html";
+    });
+  </script>
 </body>
 </html>

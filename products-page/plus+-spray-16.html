@@ -186,6 +186,38 @@
   <footer>
     <p>&copy; 2025 Rey Roseworks. All rights reserved.</p>
   </footer>
+<script>
+  const shopID = 'testShop'; 
+  if (!localStorage.getItem(shopID)) {
+    localStorage.setItem(shopID, JSON.stringify({ cart: [] }));
+  }
+
+  let shop = JSON.parse(localStorage.getItem(shopID));
+
+  // Attach event listener to Add to Cart button
+  document.querySelector('.add-to-cart').addEventListener('click', () => {
+    const qty = parseInt(document.getElementById('quantity').value);
+    const product = {
+      name: "Bio Shield Plus+ Spray – 16oz",
+      desc: "Premium surface protection with essential oils and botanicals.",
+      price: 14.99,
+      imgSrc: "../images/product-4-project-1.jpg",
+      qty: qty
+    };
+
+    // Check if already in cart
+    const existingIndex = shop.cart.findIndex(item => item.name === product.name);
+    if (existingIndex > -1) {
+      shop.cart[existingIndex].qty += qty;
+    } else {
+      shop.cart.push(product);
+    }
+
+    localStorage.setItem(shopID, JSON.stringify(shop));
+    alert("Added to cart!"); 
+    // optionally redirect: window.location.href = "cart.html";
+  });
+</script>
 
 </body>
 </html>
