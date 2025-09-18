@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Rey Roseworks for questions about our eco-friendly sprays and essential oils.">
+  <meta name="description"
+    content="Contact Rey Roseworks for questions about our eco-friendly sprays and essential oils.">
   <title>Contact Us | Rey Roseworks</title>
   <style>
     body {
@@ -21,7 +23,7 @@
       width: 100%;
       padding: 15px 0;
       background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       text-align: center;
       position: sticky;
       top: 0;
@@ -82,7 +84,7 @@
       background: #fff;
       border-radius: 10px;
       padding: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       text-align: left;
     }
 
@@ -93,7 +95,9 @@
       font-size: 0.9em;
     }
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -129,7 +133,7 @@
       background: #fff;
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       text-align: left;
     }
 
@@ -145,11 +149,12 @@
       padding: 20px;
       font-size: 0.9em;
       color: #333;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
       margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -212,5 +217,28 @@
       form.reset();
     });
   </script>
+  <script>
+    const shopID = 'testShop',
+      cartTotalID = 'cartTotal',
+      cartItemCountID = 'cartItemCount';
+
+    if (!localStorage.getItem(shopID)) localStorage.setItem(shopID, JSON.stringify({ cart: [] }));
+    let shop = JSON.parse(localStorage.getItem(shopID));
+
+    function cartTotal() {
+      let total = 0, count = 0;
+      shop.cart.forEach(item => { total += item.price * item.qty; count += item.qty; });
+      return [total, count];
+    }
+
+    function updateCartTotals() {
+      const [total, count] = cartTotal();
+      document.getElementById(cartTotalID).innerText = `$${total.toFixed(2)}`;
+      document.getElementById(cartItemCountID).innerText = count;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => { updateCartTotals(); });
+  </script>
 </body>
+
 </html>
