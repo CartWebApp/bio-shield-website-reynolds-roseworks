@@ -12,7 +12,13 @@
     h2 { font-size:2.2em; color:#fff; margin-bottom:20px; }
     #cart { width:100%; background:#fff; border-radius:10px; padding:20px; text-align:left; }
     .cartItem { display:flex; margin-bottom:15px; border-bottom:1px solid #ccc; padding-bottom:10px; }
-    .cartItem img { width:100px; margin-right:15px; border-radius:5px; }
+   .cartItem img {
+  width: 150px;
+  height: auto;
+  object-fit: contain; /* whole image fits inside box */
+  margin-right: 15px;
+  border-radius: 5px;
+}
     .cartItemInfo h3 { margin:0; font-size:1.2em; }
     .cartItemPricing p { margin:5px 0; }
     .cartTotal { margin-top:20px; font-weight:bold; }
