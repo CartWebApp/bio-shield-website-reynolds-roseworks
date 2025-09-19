@@ -11,6 +11,8 @@
     main { width:90%; max-width:800px; padding:20px; text-align:center; background:#fff; border-radius:10px; margin-top:30px; }
     h2 { font-size:2.2em; color:#333; margin-bottom:20px; }
     p { font-size:1.2em; margin:10px 0; }
+    .checkoutItem { display:flex; align-items:center; gap:15px; margin-bottom:15px; border-bottom:1px solid #ccc; padding-bottom:10px; }
+    .checkoutItem img { width:80px; border-radius:5px; }
     .btn { padding:10px 18px; background:#007BFF; color:#fff; border-radius:5px; text-decoration:none; cursor:pointer; transition:0.3s; border:none; }
     .btn:hover { background:#0056b3; }
   </style>
@@ -22,10 +24,10 @@
   </header>
 
   <main>
-    <h2>Thank you for shopping with us</h2>
-    <p>This was your total but it cannot be processed.</p>
+    <h2>Thank You for Shopping with Us</h2>
+    <p>This was your total but it unfortunately cannot be processed at this time.</p>
+    <div id="checkoutItems"></div>
     <p id="checkoutTotal"></p>
-    <p id="checkoutItems"></p>
   </main>
 
   <footer>&copy; 2025 Rey Roseworks. All rights reserved.</footer>
@@ -34,21 +36,33 @@
     const shopID = 'testShop';
     let shop = JSON.parse(localStorage.getItem(shopID)) || { cart: [] };
 
-    function cartSummary() {
+    function renderCheckout() {
+      const container = document.getElementById('checkoutItems');
+      container.innerHTML = '';
       let total = 0;
       let itemCount = 0;
-      shop.cart.forEach(item=>{
-        total += item.price * item.qty;
-        itemCount += item.qty;
-      });
-      return { total, itemCount };
+      if (shop.cart.length === 0) {
+        container.innerHTML = '<p>Your cart was empty.</p>';
+      } else {
+        shop.cart.forEach(item => {
+          total += item.price * item.qty;
+          itemCount += item.qty;
+          container.innerHTML += `
+            <div class="checkoutItem">
+              <img src="${item.imgSrc}" alt="${item.name}">
+              <div>
+                <p><strong>${item.name}</strong></p>
+                <p>Qty: ${item.qty}</p>
+                <p>Subtotal: $${(item.price*item.qty).toFixed(2)}</p>
+              </div>
+            </div>
+          `;
+        });
+      }
+      document.getElementById('checkoutTotal').innerText = `Total: $${total.toFixed(2)} (Items: ${itemCount})`;
     }
 
-    document.addEventListener("DOMContentLoaded", ()=>{
-      const { total, itemCount } = cartSummary();
-      document.getElementById('checkoutTotal').innerText = `Total: $${total.toFixed(2)}`;
-      document.getElementById('checkoutItems').innerText = `Total Items: ${itemCount}`;
-    });
+    document.addEventListener("DOMContentLoaded", renderCheckout);
   </script>
 </body>
 </html>
