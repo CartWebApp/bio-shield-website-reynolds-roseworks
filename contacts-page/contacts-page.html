@@ -180,7 +180,9 @@
     <h1>Contact Us</h1>
     <p class="lead">We’d love to hear from you! Fill out the form below or reach out using our details.</p>
 
-    <form id="contact-form">
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -200,6 +202,7 @@
 
       <button type="submit" class="btn">Send Message</button>
     </form>
+
 
     <div class="info">
       <h2>Our Office</h2>
