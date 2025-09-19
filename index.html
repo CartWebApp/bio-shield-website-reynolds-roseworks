@@ -61,10 +61,17 @@
     }
 
     nav a {
-      margin: 0 10px;
-      font-weight: bold;
-      color: #007BFF;
+      display: inline-block;
+      background-color: #28a745;
+      /* green like View Products */
+      color: #ffffff;
+      /* black text */
       text-decoration: none;
+      padding: 12px 20px;
+      /* same as Go to Cart */
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin: 0 5px;
     }
 
     nav a:hover {
@@ -145,7 +152,7 @@
       text-align: center;
     }
 
-    
+
     h2 {
       font-size: 2.2em;
       margin-bottom: 20px;
@@ -198,6 +205,7 @@
 
     /* Responsive Styles */
     @media (max-width: 600px) {
+
       /* Hero Section */
       .hero {
         padding: 50px 15px;
@@ -283,7 +291,8 @@
 
   <main role="main">
     <p>Welcome to <strong>Rey Roseworks</strong>. Explore our eco-friendly sprays and essential oils. Visit our
-      <a href="second-page/second-page.html">about page</a> for more details.</p>
+      <a href="second-page/second-page.html">about page</a> for more details.
+    </p>
 
     <h2>Our Products</h2>
 
@@ -345,4 +354,3 @@
 </body>
 
 </html>
-
