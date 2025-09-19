@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rey Roseworks - Products</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #448927; /* restored green background */
-      color: #fff; /* change text to white for contrast */
+      background: #448927;
+      color: #fff;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-     header {
+    header {
       width: 100%;
       padding: 15px 0;
       background: #fff;
@@ -24,14 +24,11 @@
       text-align: center;
       position: sticky;
       top: 0;
-      z-index: 1000;      display: flex;
+      z-index: 1000;
+      display: flex;
       flex-direction: column;
       align-items: center;
       padding: 10px;
-
-    }
-    nav .btn:hover {
-      background: #0056b3;
     }
 
     .logo img {
@@ -44,7 +41,6 @@
       transform: scale(1.05);
     }
 
-
     nav {
       margin-top: 10px;
     }
@@ -52,12 +48,9 @@
     nav a {
       display: inline-block;
       background-color: #28a745;
-      /* green like View Products */
       color: #ffffff;
-      /* black text */
       text-decoration: none;
       padding: 12px 20px;
-      /* same as Go to Cart */
       border-radius: 8px;
       transition: background-color 0.3s ease, transform 0.2s ease;
       margin: 0 5px;
@@ -66,12 +59,6 @@
     nav a:hover {
       text-decoration: underline;
     }
-
-    main a {
-  color: #28a745;
-  ;
-  text-decoration: none;
-}
 
     .cart-info {
       margin-left: 10px;
@@ -89,7 +76,9 @@
       transition: background 0.3s;
       margin-left: 5px;
     }
-    .btn:hover { background: #218838; }
+    .btn:hover {
+      background: #218838;
+    }
 
     main {
       flex: 1;
@@ -99,71 +88,84 @@
       text-align: center;
     }
 
-    h2 { font-size: 2em; margin-bottom: 20px; color: #fff; }
+    h2 {
+      font-size: 2.4em; /* 2em * 1.2 (for a bit bigger) */
+      margin-bottom: 20px;
+      color: #fff;
+    }
 
+    /* 60% bigger than original, 2 columns grid */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 30px;
     }
 
     .product-card {
       background: #fff;
-      color: #222;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      padding: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+      padding: 24px; /* 15px * 1.6 = 24px */
+      transition: transform 0.3s ease;
+      color: #222;
     }
+
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
     .product-card img {
-      width: 100%;
+      max-width: 100%;
       border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
-    .product-card img:hover { transform: scale(1.05); }
 
-    .product-card h3 { margin: 12px 0; font-size: 1.1em; }
-    .product-card p { font-size: 1em; }
+    .product-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card h3 {
+      margin: 24px 0 16px; /* 15px *1.6 and 10px*1.6 */
+      font-size: 1.92em; /* 1.2em * 1.6 = 1.92em */
+      color: #222;
+    }
+
+    .product-card p {
+      font-size: 1.6em; /* 1em * 1.6 = 1.6em */
+    }
 
     footer {
       background: #fff;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
       margin-top: 40px;
       color: #333;
     }
 
-    /* Mobile (<768px) */
-    @media (max-width: 767px) {
-      .product-grid { grid-template-columns: 1fr; }
-      nav { flex-direction: column; gap: 8px; }
-      .cart-info { margin-left: 0; margin-top: 5px; }
-      .btn { margin: 5px 0; width: 80%; }
-      h2 { font-size: 1.8em; }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .product-card h3 {
+        font-size: 1.5em;
+      }
+      .product-card p {
+        font-size: 1.2em;
+      }
     }
-
-    /* Tablet/iPad (768px–1024px) */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
-      nav { flex-wrap: wrap; gap: 12px; }
-      .btn { padding: 10px 16px; }
-      h2 { font-size: 2em; }
-    }
-
-    /* Desktop (>1024px) 4 columns */
   </style>
 </head>
 <body>
   <header>
-    <div class="logo"><img src="../images/rey-roseworks.png" alt="Rey Roseworks Logo"></div>
+    <div class="logo">
+      <img src="../images/rey-roseworks.png" alt="Rey Roseworks Logo" />
+    </div>
     <nav>
       <a href="../index.html">Home</a>
       <a href="../second-page/second-page.html">About</a>
@@ -182,37 +184,37 @@
     <div class="product-grid">
       <div class="product-card">
         <a href="original-spray-16.html">
-          <img src="../images/product-1-project-1.jpg" alt="Bio Shield Original Spray - 16oz">
-          <h3>Bio Shield Original Spray - 16oz</h3>
+          <img src="../images/product-1-project-1.jpg" alt="Bio Shield Original Spray - 16oz" />
         </a>
-        <h3>$12.99</h3>
+        <h3>Bio Shield Original Spray - 16oz</h3>
+        <p>$12.99</p>
         <a href="original-spray-16.html" class="btn">View Product</a>
       </div>
 
       <div class="product-card">
         <a href="lavender-essential-oil-15.html">
-          <img src="../images/product-2-project-1.jpg" alt="Lavender Essential Oil - 15ml">
-          <h3>Lavender Essential Oil - 15ml</h3>
+          <img src="../images/product-2-project-1.jpg" alt="Lavender Essential Oil - 15ml" />
         </a>
-        <h3>$12.50</h3>
+        <h3>Lavender Essential Oil - 15ml</h3>
+        <p>$12.50</p>
         <a href="lavender-essential-oil-15.html" class="btn">View Product</a>
       </div>
 
       <div class="product-card">
         <a href="moisturizing-lotion-12.html">
-          <img src="../images/product-3-project-1.jpg" alt="Bio Shield Moisturizing Lotion - 12oz">
-          <h3>Bio Shield Moisturizing Lotion - 12oz</h3>
+          <img src="../images/product-3-project-1.jpg" alt="Bio Shield Moisturizing Lotion - 12oz" />
         </a>
-        <h3>$16.99</h3>
+        <h3>Bio Shield Moisturizing Lotion - 12oz</h3>
+        <p>$16.99</p>
         <a href="moisturizing-lotion-12.html" class="btn">View Product</a>
       </div>
 
       <div class="product-card">
         <a href="plus+-spray-16.html">
-          <img src="../images/product-4-project-1.jpg" alt="Bio Shield Plus+ Spray - 16oz">
-          <h3>Bio Shield Plus+ Spray - 16oz</h3>
+          <img src="../images/product-4-project-1.jpg" alt="Bio Shield Plus+ Spray - 16oz" />
         </a>
-        <h3>$14.99</h3>
+        <h3>Bio Shield Plus+ Spray - 16oz</h3>
+        <p>$14.99</p>
         <a href="plus+-spray-16.html" class="btn">View Product</a>
       </div>
     </div>
