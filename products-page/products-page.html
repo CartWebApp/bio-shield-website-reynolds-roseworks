@@ -16,40 +16,62 @@
       min-height: 100vh;
     }
 
-    header {
+     header {
+      width: 100%;
+      padding: 15px 0;
       background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      text-align: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      display: flex;
+      z-index: 1000;      display: flex;
       flex-direction: column;
       align-items: center;
       padding: 10px;
+
+    }
+    nav .btn:hover {
+      background: #0056b3;
     }
 
-    .logo img { max-width: 180px; transition: transform 0.3s; }
-    .logo img:hover { transform: scale(1.05); }
+    .logo img {
+      max-width: 220px;
+      margin: 20px 0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
 
     nav {
       margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
     }
 
     nav a {
-      color: #007BFF;
+      display: inline-block;
+      background-color: #28a745;
+      /* green like View Products */
+      color: #ffffff;
+      /* black text */
       text-decoration: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
+      padding: 12px 20px;
+      /* same as Go to Cart */
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin: 0 5px;
     }
-    nav a:hover { background: #e6f0ff; }
-    nav a.active { background: #007BFF; color: #fff; }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      color: #0056b3;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 3px;
+    }
 
     .cart-info {
       margin-left: 10px;
