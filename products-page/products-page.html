@@ -5,160 +5,197 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rey Roseworks - Products</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #448927;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+   body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #448927;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    header {
-      width: 100%;
-      padding: 15px 0;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-    }
+header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 10px;
+}
 
-    .logo img {
-      max-width: 220px;
-      margin: 20px 0;
-      transition: transform 0.3s ease-in-out;
-    }
+.logo img {
+  max-width: 180px;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
 
-    .logo img:hover {
-      transform: scale(1.05);
-    }
+.logo img:hover {
+  transform: scale(1.05);
+}
 
-    nav {
-      margin-top: 10px;
-    }
+nav {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+}
 
-    nav a {
-      display: inline-block;
-      background-color: #28a745;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      margin: 0 5px;
-    }
+nav a {
+  display: inline-block;
+  background-color: #28a745;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 0 4px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a:hover {
+  background-color: #218838;
+}
 
-    .cart-info {
-      margin-left: 10px;
-      font-weight: normal;
-      color: #333;
-    }
+nav a.active {
+  color: yellow;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 8px 14px;
-      background: #28a745;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
-      margin-left: 5px;
-    }
-    .btn:hover {
-      background: #218838;
-    }
+.cart-info {
+  margin-left: 10px;
+  font-weight: normal;
+  color: #333;
+  font-size: 0.95em;
+}
 
-    main {
-      flex: 1;
-      width: 90%;
-      max-width: 1200px;
-      margin: 20px auto;
-      text-align: center;
-    }
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #28a745;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+  margin-left: 5px;
+}
 
-    h2 {
-      font-size: 2.4em; /* 2em * 1.2 (for a bit bigger) */
-      margin-bottom: 20px;
-      color: #fff;
-    }
+.btn:hover {
+  background: #218838;
+}
 
-    /* 60% bigger than original, 2 columns grid */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      margin-top: 30px;
-    }
+main {
+  flex: 1;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  text-align: center;
+}
 
-    .product-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-      padding: 24px; /* 15px * 1.6 = 24px */
-      transition: transform 0.3s ease;
-      color: #222;
-    }
+h2 {
+  font-size: 2.4em;
+  margin-bottom: 20px;
+  color: #fff;
+}
 
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 30px;
+}
 
-    .product-card img {
-      max-width: 100%;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: transform 0.3s ease;
+  color: #222;
+}
 
-    .product-card img:hover {
-      transform: scale(1.05);
-    }
+.product-card:hover {
+  transform: translateY(-5px);
+}
 
-    .product-card h3 {
-      margin: 24px 0 16px; /* 15px *1.6 and 10px*1.6 */
-      font-size: 1.92em; /* 1.2em * 1.6 = 1.92em */
-      color: #222;
-    }
+.product-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
-    .product-card p {
-      font-size: 1.6em; /* 1em * 1.6 = 1.6em */
-    }
+.product-card img:hover {
+  transform: scale(1.05);
+}
 
-    footer {
-      background: #fff;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-      margin-top: 40px;
-      color: #333;
-    }
+.product-card h3 {
+  margin: 24px 0 16px;
+  font-size: 1.92em;
+  color: #222;
+}
 
-    /* Responsive styles */
-    @media (max-width: 768px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      .product-card h3 {
-        font-size: 1.5em;
-      }
-      .product-card p {
-        font-size: 1.2em;
-      }
-    }
+.product-card p {
+  font-size: 1.6em;
+}
+
+footer {
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .logo img {
+    max-width: 140px;
+    margin: 4px 0;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .product-card h3 {
+    font-size: 1.5em;
+  }
+
+  .product-card p {
+    font-size: 1.2em;
+  }
+
+  .btn,
+  nav a {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
+  .cart-info {
+    display: block;
+    margin-top: 5px;
+    color: #333;
+    font-size: 0.9em;
+  }
+}
+
   </style>
 </head>
 <body>

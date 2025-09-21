@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Rey Roseworks Bio Shield natural sprays and essential oils. Shop eco-friendly and plant-based products." />
+  <meta name="description" content="Rey Roseworks Bio Shield natural sprays and essential oils. Shop eco-friendly and plant-based products." />
   <meta name="keywords" content="Rey Roseworks, Bio Shield, essential oils, natural sprays, eco-friendly products" />
   <link rel="icon" href="images/favicon.ico" />
   <title>Rey Roseworks - Home</title>
@@ -24,18 +22,19 @@
 
     header {
       width: 100%;
-      padding: 15px 0;
+      padding: 5px 0;
       background: #fff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      min-height: 60px;
     }
 
     .logo img {
-      max-width: 220px;
-      margin: 20px 0;
+      max-width: 180px;
+      margin: 5px 0;
       transition: transform 0.3s ease-in-out;
     }
 
@@ -49,6 +48,7 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
+      margin-top: 5px;
     }
 
     .nav-links,
@@ -57,7 +57,7 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     nav a {
@@ -65,10 +65,11 @@
       background-color: #28a745;
       color: #ffffff;
       text-decoration: none;
-      padding: 12px 20px;
+      padding: 8px 14px;
       border-radius: 8px;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      margin: 0 5px;
+      margin: 0 4px;
+      font-size: 0.95em;
     }
 
     nav a:hover {
@@ -108,7 +109,7 @@
       background: url('/images/hero-image.png') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 140px 20px; /* Increased padding */
+      padding: 140px 20px;
       border-radius: 10px;
       margin: 30px 0;
       overflow: hidden;
@@ -144,12 +145,13 @@
       max-width: 1200px;
       padding: 20px;
       text-align: center;
-        color: white;
+      color: white;
     }
+
     main a {
-  color: #d9ff00;
-  text-decoration: underline;
-}
+      color: #d9ff00;
+      text-decoration: underline;
+    }
 
     h2 {
       font-size: 2.2em;
@@ -203,10 +205,8 @@
 
     /* Responsive Styles */
     @media (max-width: 600px) {
-
-      /* Hero Section */
       .hero {
-        padding: 80px 15px; /* Increased from 50px */
+        padding: 80px 15px;
       }
 
       .hero h1 {
@@ -223,7 +223,6 @@
         font-size: 0.9em;
       }
 
-      /* Product Grid */
       .product-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -246,10 +245,19 @@
         font-size: 0.9em;
       }
 
-      /* Navigation */
       .nav-links,
       .cart-info {
         flex-direction: column;
+      }
+
+      .logo img {
+        max-width: 150px;
+        margin: 4px 0;
+      }
+
+      nav a {
+        padding: 6px 12px;
+        font-size: 0.9em;
       }
 
       .cart-info span,
@@ -295,7 +303,6 @@
     <h2>Our Products</h2>
 
     <div class="product-grid">
-      <!-- First Product -->
       <div class="product-card">
         <a href="/products-page/original-spray-16.html">
           <img src="images/product-1-project-1.jpg" alt="Original Bio Shield Spray 16oz" />
@@ -305,7 +312,6 @@
         <a href="/products-page/original-spray-16.html" class="btn">View Product</a>
       </div>
 
-      <!-- Second Product -->
       <div class="product-card">
         <a href="/products-page/lavender-essential-oil-15.html">
           <img src="images/product-2-project-1.jpg" alt="Lavender Essential Oil 15ml" />
@@ -350,5 +356,4 @@
     });
   </script>
 </body>
-
 </html>
