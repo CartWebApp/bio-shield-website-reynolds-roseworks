@@ -14,7 +14,7 @@
       background-color: #448927;
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #212529; /* default dark text for light mode */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -32,6 +32,7 @@
       z-index: 1000;
       min-height: 60px;
       transition: background-color 0.4s ease, color 0.4s ease;
+      color: #212529;
     }
 
     .logo img {
@@ -163,7 +164,7 @@
       border-radius: 10px;
       margin: 30px 0;
       overflow: hidden;
-      transition: background-color 0.4s ease;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .hero::before {
@@ -197,7 +198,6 @@
       max-width: 1200px;
       padding: 20px;
       text-align: center;
-      color: white;
       transition: color 0.4s ease;
     }
 
@@ -235,27 +235,20 @@
       border-radius: 8px;
     }
 
-    .product-card h3 {
-      margin: 15px 0 10px;
-      font-size: 1.2em;
-      color: #fff;
-    }
-
-    .product-card p {
-      font-size: 1em;
-      color: #fff;
-    }
-
     footer {
       background: #fff;
       width: 100%;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      color: #333;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
       margin-top: 40px;
       transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* Keep welcome text white */
+    .welcome-text {
+      color: #ffffff;
     }
 
     /* Dark Mode Styles */
@@ -279,12 +272,18 @@
       background-color: #505050;
     }
 
-    main.dark-mode a {
-      color: #d9ff00;
+    main.dark-mode {
+      color: #f0f0f0;
     }
 
     .product-card.dark-mode {
       background-color: #2a2a2a;
+      color: #f0f0f0;
+    }
+
+    .product-card.dark-mode h3,
+    .product-card.dark-mode p {
+      color: #f0f0f0;
     }
 
     .hero.dark-mode::before {
@@ -350,7 +349,8 @@
   </section>
 
   <main role="main">
-    <p>Welcome to <strong>Rey Roseworks</strong>. Explore our eco-friendly sprays and essential oils. Visit our
+    <p class="welcome-text">
+      Welcome to <strong>Rey Roseworks</strong>. Explore our eco-friendly sprays and essential oils. Visit our
       <a href="second-page/second-page.html">about page</a> for more details.
     </p>
 
