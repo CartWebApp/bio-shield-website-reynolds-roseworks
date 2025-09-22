@@ -18,6 +18,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     header {
@@ -30,6 +31,7 @@
       top: 0;
       z-index: 1000;
       min-height: 60px;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .logo img {
@@ -48,6 +50,7 @@
       align-items: center;
       gap: 10px;
       margin-top: 5px;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .nav-links,
@@ -81,8 +84,6 @@
     .btn {
       display: inline-block;
       padding: 8px 14px;
-      background: #28a745;
-      color: #fff;
       border-radius: 5px;
       text-decoration: none;
       transition: background 0.3s;
@@ -91,10 +92,22 @@
 
     .btn-secondary {
       background: #28a745;
+      color: #d9ff00;
     }
 
     .btn-secondary:hover {
       background: #218838;
+      color: #fff;
+    }
+
+    .btn-view-product {
+      background: #1e7e34;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .btn-view-product:hover {
+      background: #155d27;
     }
 
     /* Hamburger Button */
@@ -115,7 +128,6 @@
       transition: 0.3s;
     }
 
-    /* Hide menu on mobile by default */
     @media (max-width: 600px) {
       .hamburger {
         display: flex;
@@ -151,6 +163,7 @@
       border-radius: 10px;
       margin: 30px 0;
       overflow: hidden;
+      transition: background-color 0.4s ease;
     }
 
     .hero::before {
@@ -159,6 +172,7 @@
       inset: 0;
       background: rgba(0, 0, 0, 0.4);
       border-radius: 10px;
+      transition: background-color 0.4s ease;
     }
 
     .hero h1,
@@ -184,6 +198,7 @@
       padding: 20px;
       text-align: center;
       color: white;
+      transition: color 0.4s ease;
     }
 
     main a {
@@ -208,7 +223,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       padding: 15px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;
     }
 
     .product-card:hover {
@@ -223,11 +238,12 @@
     .product-card h3 {
       margin: 15px 0 10px;
       font-size: 1.2em;
-      color: #222;
+      color: #fff;
     }
 
     .product-card p {
       font-size: 1em;
+      color: #fff;
     }
 
     footer {
@@ -239,6 +255,53 @@
       color: #333;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
       margin-top: 40px;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    header.dark-mode,
+    footer.dark-mode {
+      background-color: #2b2b2b;
+      color: #f0f0f0;
+    }
+
+    nav.dark-mode a {
+      background-color: #3b3b3b;
+      color: #d9ff00;
+    }
+
+    nav.dark-mode a:hover {
+      background-color: #505050;
+    }
+
+    main.dark-mode a {
+      color: #d9ff00;
+    }
+
+    .product-card.dark-mode {
+      background-color: #2a2a2a;
+    }
+
+    .hero.dark-mode::before {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Dark Mode Toggle Button */
+    #darkModeToggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #darkModeToggle:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -247,6 +310,14 @@
   <header>
     <div class="logo">
       <img src="images/rey-roseworks.png" alt="Rey Roseworks Bio Shield Logo" />
+    </div>
+
+    <!-- 🌞🌜 Dark Mode Toggle Button -->
+    <div id="darkModeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">
+      <svg id="themeIcon" width="32" height="32" viewBox="0 0 24 24" fill="none">
+        <path id="themePath" d="M12 4V2M12 22v-2M4.22 4.22l1.42 1.42M18.36 18.36l-1.42-1.42M2 12H4m16 0h2M4.22 19.78l1.42-1.42M19.78 4.22l-1.42 1.42M12 8a4 4 0 100 8 4 4 0 000-8z"
+          stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
 
     <!-- Hamburger Menu Button -->
@@ -343,6 +414,38 @@
 
       hamburger.addEventListener("click", () => {
         navBar.classList.toggle("active");
+      });
+
+      // Dark Mode Toggle Logic
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const themePath = document.getElementById('themePath');
+
+      const moonPath = "M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z";
+      const sunPath = "M12 4V2M12 22v-2M4.22 4.22l1.42 1.42M18.36 18.36l-1.42-1.42M2 12H4m16 0h2M4.22 19.78l1.42-1.42M19.78 4.22l-1.42 1.42M12 8a4 4 0 100 8 4 4 0 000-8z";
+
+      const elementsToToggle = [
+        document.body,
+        document.querySelector("header"),
+        document.querySelector("footer"),
+        document.querySelector("nav"),
+        document.querySelector("main"),
+        document.querySelector(".hero"),
+        ...document.querySelectorAll(".product-card")
+      ];
+
+      function setDarkMode(enabled) {
+        elementsToToggle.forEach(el => el?.classList.toggle("dark-mode", enabled));
+        themePath.setAttribute("d", enabled ? moonPath : sunPath);
+        themePath.setAttribute("stroke", enabled ? "#f0f0f0" : "#333");
+        localStorage.setItem("darkMode", enabled);
+      }
+
+      const isDark = localStorage.getItem("darkMode") === "true";
+      setDarkMode(isDark);
+
+      darkModeToggle.addEventListener("click", () => {
+        const current = document.body.classList.contains("dark-mode");
+        setDarkMode(!current);
       });
     });
   </script>
