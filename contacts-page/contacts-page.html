@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,202 +8,238 @@
   <title>Rey Roseworks - Contact Us</title>
   <style>
     body {
-  font-family: 'Arial', sans-serif;
-  background-color: #448927;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-}
+      font-family: 'Arial', sans-serif;
+      background-color: #448927;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+    }
 
-header {
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 8px 10px;
-}
+    header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px 10px;
+    }
 
-.logo img {
-  max-width: 180px;
-  margin: 5px 0;
-  transition: transform 0.3s ease-in-out;
-}
+    .logo img {
+      max-width: 180px;
+      margin: 5px 0;
+      transition: transform 0.3s ease-in-out;
+    }
 
-.logo img:hover {
-  transform: scale(1.05);
-}
+    .logo img:hover {
+      transform: scale(1.05);
+    }
 
-nav {
-  margin-top: 4px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.95em;
-}
+    nav {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95em;
+    }
 
-nav a {
-  display: inline-block;
-  background-color: #28a745;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin: 0 4px;
-}
+    nav a {
+      display: inline-block;
+      background-color: #28a745;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin: 0 4px;
+    }
 
-nav a:hover {
-  background-color: #218838;
-}
+    nav a:hover {
+      background-color: #218838;
+    }
 
-nav a.active {
-  color: yellow;
-}
+    nav a.active {
+      color: yellow;
+    }
 
-.cart-info,
-nav span {
-  font-size: 0.9em;
-  color: #333;
-  margin: 4px 0;
-}
+    .cart-info,
+    nav span {
+      font-size: 0.9em;
+      color: #333;
+      margin: 4px 0;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #28a745;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s;
-  margin-left: 5px;
-}
+    .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #28a745;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-left: 5px;
+    }
 
-.btn:hover {
-  background: #218838;
-}
+    .btn:hover {
+      background: #218838;
+    }
 
-main {
-  width: 90%;
-  max-width: 800px;
-  padding: 20px;
-  text-align: center;
-}
+    main {
+      width: 90%;
+      max-width: 800px;
+      padding: 20px;
+      text-align: center;
+    }
 
-h1 {
-  font-size: 2.2em;
-  margin-bottom: 15px;
-  color: #fff;
-}
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      color: #fff;
+    }
 
-p.lead {
-  margin-bottom: 25px;
-  font-size: 1.1em;
-  color: #f0f0f0;
-}
+    p.lead {
+      margin-bottom: 25px;
+      font-size: 1.1em;
+      color: #f0f0f0;
+    }
 
-form {
-  background: #fff;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: left;
-}
+    form {
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 0.9em;
-}
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
 
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-}
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
 
-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
 
-.info {
-  margin-top: 30px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: left;
-}
+    .info {
+      margin-top: 30px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
 
-.info h2 {
-  margin-top: 0;
-  color: #333;
-}
+    .info h2 {
+      margin-top: 0;
+      color: #333;
+    }
 
-footer {
-  background: #fff;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #333;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-  margin-top: 40px;
-}
+    footer {
+      background: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #333;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+      margin-top: 40px;
+    }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 6px;
-  }
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      justify-content: space-between;
+    }
 
-  .logo img {
-    max-width: 140px;
-    margin: 4px 0;
-  }
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: #28a745;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
 
-  nav a, .btn {
-    padding: 6px 12px;
-    font-size: 0.9em;
-  }
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 10px;
+        width: 100%;
+      }
 
-  .cart-info,
-  nav span {
-    display: block;
-    margin-top: 5px;
-    color: #333;
-    font-size: 0.9em;
-  }
-}
+      nav.active {
+        display: flex;
+      }
 
+      .hamburger {
+        display: flex;
+        margin-top: 8px;
+      }
+
+      .logo img {
+        max-width: 140px;
+        margin: 4px 0;
+      }
+
+      nav a, .btn {
+        padding: 6px 12px;
+        font-size: 0.9em;
+      }
+
+      .cart-info,
+      nav span {
+        display: block;
+        margin-top: 5px;
+        color: #333;
+        font-size: 0.9em;
+      }
+    }
   </style>
 </head>
-
 <body>
   <header>
     <div class="logo">
       <img src="../images/rey-roseworks.png" alt="Rey Roseworks Bio Shield Logo">
     </div>
-    <nav aria-label="Main Navigation">
+
+    <!-- Hamburger button (mobile only) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu" aria-label="Main Navigation">
       <a href="../index.html">Home</a>
       <a href="../second-page/second-page.html">About</a>
       <a href="../products-page/products-page.html">Products</a>
@@ -220,29 +255,27 @@ footer {
     <p class="lead">We’d love to hear from you! Fill out the form below or reach out using our details.</p>
 
     <form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact">
-  
-  <label for="name">Full Name</label>
-  <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="hidden" name="form-name" value="contact">
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-  <label for="subject">Subject</label>
-  <select id="subject" name="subject">
-    <option>General Inquiry</option>
-    <option>Partnerships</option>
-    <option>Support</option>
-    <option>Other</option>
-  </select>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required>
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+      <label for="subject">Subject</label>
+      <select id="subject" name="subject">
+        <option>General Inquiry</option>
+        <option>Partnerships</option>
+        <option>Support</option>
+        <option>Other</option>
+      </select>
 
-  <button type="submit" class="btn">Send Message</button>
-</form>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
 
-
+      <button type="submit" class="btn">Send Message</button>
+    </form>
 
     <div class="info">
       <h2>Our Office</h2>
@@ -258,14 +291,15 @@ footer {
   </footer>
 
   <script>
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thank you for contacting us! (This is a demo form).');
-      form.reset();
+    // Hamburger menu toggle
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
     });
-  </script>
-  <script>
+
+    // Cart handling
     const shopID = 'testShop',
       cartTotalID = 'cartTotal',
       cartItemCountID = 'cartItemCount';
@@ -288,5 +322,4 @@ footer {
     document.addEventListener("DOMContentLoaded", () => { updateCartTotals(); });
   </script>
 </body>
-
 </html>
