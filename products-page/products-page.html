@@ -157,11 +157,41 @@ footer {
   color: #333;
 }
 
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #28a745;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   nav {
+    display: none;
     flex-direction: column;
     gap: 6px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-top: 8px;
   }
 
   .logo img {
@@ -195,7 +225,6 @@ footer {
     font-size: 0.9em;
   }
 }
-
   </style>
 </head>
 <body>
@@ -203,7 +232,15 @@ footer {
     <div class="logo">
       <img src="../images/rey-roseworks.png" alt="Rey Roseworks Logo" />
     </div>
-    <nav>
+
+    <!-- Hamburger button (mobile only) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
       <a href="../index.html">Home</a>
       <a href="../second-page/second-page.html">About</a>
       <a href="products-page.html" class="active">Products</a>
@@ -282,6 +319,14 @@ footer {
     }
 
     document.addEventListener("DOMContentLoaded", () => { updateCartTotals(); });
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
   </script>
 </body>
 </html>

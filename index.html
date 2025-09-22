@@ -44,7 +44,6 @@
 
     nav.nav-bar {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       gap: 10px;
@@ -54,7 +53,6 @@
     .nav-links,
     .cart-info {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       gap: 8px;
@@ -101,6 +99,50 @@
 
     .btn-secondary:hover {
       background: #218838;
+    }
+
+    /* Hamburger Button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Hide menu on mobile by default */
+    @media (max-width: 600px) {
+      .hamburger {
+        display: flex;
+        margin: 10px auto;
+      }
+
+      .nav-links,
+      .cart-info {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      nav.nav-bar.active .nav-links,
+      nav.nav-bar.active .cart-info {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px;
+        width: 100%;
+      }
     }
 
     /* Hero Section */
@@ -202,69 +244,6 @@
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
       margin-top: 40px;
     }
-
-    /* Responsive Styles */
-    @media (max-width: 600px) {
-      .hero {
-        padding: 80px 15px;
-      }
-
-      .hero h1 {
-        font-size: 1.8em;
-      }
-
-      .hero p {
-        font-size: 1em;
-      }
-
-      .btn,
-      .btn-secondary {
-        padding: 8px 15px;
-        font-size: 0.9em;
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .product-card {
-        padding: 10px;
-      }
-
-      .product-card h3 {
-        font-size: 1.1em;
-      }
-
-      .product-card p {
-        font-size: 0.95em;
-      }
-
-      .product-card .btn {
-        padding: 8px 12px;
-        font-size: 0.9em;
-      }
-
-      .nav-links,
-      .cart-info {
-        flex-direction: column;
-      }
-
-      .logo img {
-        max-width: 150px;
-        margin: 4px 0;
-      }
-
-      nav a {
-        padding: 6px 12px;
-        font-size: 0.9em;
-      }
-
-      .cart-info span,
-      .cart-info a {
-        margin-top: 5px;
-      }
-    }
   </style>
 </head>
 
@@ -273,7 +252,15 @@
     <div class="logo">
       <img src="images/rey-roseworks.png" alt="Rey Roseworks Bio Shield Logo" />
     </div>
-    <nav aria-label="Main Navigation" class="nav-bar">
+
+    <!-- Hamburger Menu Button -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav aria-label="Main Navigation" class="nav-bar" id="navBar">
       <div class="nav-links">
         <a href="index.html" class="active" aria-current="page">Home</a>
         <a href="second-page/second-page.html">About</a>
@@ -353,6 +340,14 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       updateCartTotals();
+
+      // Hamburger toggle
+      const hamburger = document.getElementById("hamburger");
+      const navBar = document.getElementById("navBar");
+
+      hamburger.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
     });
   </script>
 </body>
