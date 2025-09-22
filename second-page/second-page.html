@@ -45,10 +45,14 @@ header {
 nav {
   margin-top: 5px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;              /* keep items in one row */
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  overflow-x: auto;               /* allow horizontal scroll */
+  white-space: nowrap;            /* prevent wrapping */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  padding: 5px 10px;
 }
 
 nav a {
@@ -177,7 +181,8 @@ footer {
 /* Mobile Styles */
 @media (max-width: 600px) {
   nav {
-    flex-direction: column;
+    flex-direction: row;   /* keep in a row */
+    justify-content: flex-start;
   }
 
   .logo img {
